@@ -1,3 +1,12 @@
+.topBarDiv{
+  padding: 15px;
+  background-color: lightgrey;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
 .resultsDropDown{
   margin-left: 5px;
 }
