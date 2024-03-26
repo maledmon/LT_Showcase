@@ -1,0 +1,21 @@
+.resultsDropDown{
+  margin-left: 5px;
+}
+
+.paginationDiv{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationPages{
+  margin:5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.activePage{
+  background-color: lightgrey;
+  border-radius: 10px;
+}
