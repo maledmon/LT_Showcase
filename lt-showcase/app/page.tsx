@@ -11,7 +11,7 @@ import { Slide } from "react-slideshow-image";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-slideshow-image/dist/styles.css'
 
-type ItemInfoType = {
+type ProductInfoType = {
   id: 1,
   title: string,
   description: string,
@@ -25,16 +25,23 @@ type ItemInfoType = {
   images: string[]
 }
 
+type DataType = {
+  products: ProductInfoType[], 
+  limit: number, 
+  skip: number, 
+  total: number
+}
+
 export default function Home() {
   
-  const [data, setData] = useState<{products: any[], limit: number, skip: number, total: number}|null>(null)
+  const [data, setData] = useState<DataType|null>(null)
   const [isLoading, setLoading] = useState<boolean>(true)
   const [resultsPerPage, setResultsPerPage] = useState<number>(10)
   const [numberOfPages, setNumberOfPages] = useState<number>(0)
   const [pageNumber, setPageNumber] = useState<number>(1)
   const [searchKey, setSearchKey] = useState<string>("")
   const [searchInput, setSearchInput] = useState<string>("")
-  const [itemInfo, setItemInfo] = useState<ItemInfoType|null>(null)
+  const [itemInfo, setItemInfo] = useState<ProductInfoType|null>(null)
 
   const [modalShow, setModalShow] = useState(false);
 
@@ -44,7 +51,6 @@ export default function Home() {
     fetch("https://dummyjson.com/products/"+id.toString())
       .then((res) => res.json())
       .then(async (data) => {
-        console.log(data)
         setItemInfo(data);
         setModalShow(true);
       })
@@ -64,7 +70,6 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => {
         setData(data)
-        console.log(data)
         setNumberOfPages(Math.ceil(data.total/data.limit))
         setLoading(false)
       })
