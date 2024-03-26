@@ -96,16 +96,20 @@ export default function Home() {
     setResultsPerPage(event.target.value);
   }
  
-  if (isLoading) return (<ThemeProvider theme={darkTheme}>
-                          <CssBaseline enableColorScheme/>
-                          <Box sx={{ width:"100%", textAlign: "center" }}>
-                            <strong>Loading...</strong>
-                          </Box>
-                        </ThemeProvider>)
-  if (!data) return (<ThemeProvider theme={darkTheme}>
-                      <CssBaseline enableColorScheme/>
-                      <strong>No Data</strong>
-                    </ThemeProvider>)
+  if (isLoading) return (
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline enableColorScheme/>
+      <Box sx={{ width:"100%", textAlign: "center" }}>
+        <strong>Loading...</strong>
+      </Box>
+    </ThemeProvider>
+)
+  if (!data) return (
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline enableColorScheme/>
+      <strong>No Data</strong>
+    </ThemeProvider>
+  )
   
   return (
     <ThemeProvider theme={darkTheme}>
