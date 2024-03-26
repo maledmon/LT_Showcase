@@ -1,6 +1,6 @@
 ## Prerequisites
-[https://nodejs.org/en]NodeJs
-[https://yarnpkg.com/getting-started/install]Yarn
+1. [NodeJs](https://nodejs.org/en)
+2. [Yarn](https://yarnpkg.com/getting-started/install)
 
 ## Getting Started
 1. Clone the repo locally
