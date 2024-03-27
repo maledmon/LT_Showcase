@@ -59,9 +59,6 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if (pageNumber != 1){
-      setPageNumber(1);
-    }
     window.scrollTo(0, 0)
     let skip = (pageNumber-1)*parseInt(resultsPerPage)
     let url
@@ -86,11 +83,17 @@ export default function Home() {
 
   const search = () => {
       setSearchKey(searchInput)
+      if (pageNumber != 1){
+        setPageNumber(1);
+      }
   }
 
   const searchEnter = (e: any) => {
     if (e.key === 'Enter') {
       setSearchKey(searchInput)
+      if (pageNumber != 1){
+        setPageNumber(1);
+      }
     }
   }
 
