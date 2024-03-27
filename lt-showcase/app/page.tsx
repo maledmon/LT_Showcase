@@ -191,6 +191,7 @@ export default function Home() {
               <IconButton
                 aria-label="close"
                 onClick={handleModalClose}
+                className={"DialogCloseButton"}
                 sx={{
                   position: 'absolute',
                   right: 8,
