@@ -59,6 +59,9 @@ export default function Home() {
   }
 
   useEffect(() => {
+    if (pageNumber != 1){
+      setPageNumber(1);
+    }
     window.scrollTo(0, 0)
     let skip = (pageNumber-1)*parseInt(resultsPerPage)
     let url
